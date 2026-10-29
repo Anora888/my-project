@@ -1,0 +1,2147 @@
+@font-face {
+  font-family: 'Apple Color Emoji';
+  src: url('https://cdn.jsdelivr.net/gh/samuelnguyen/apple-emoji-linux@latest/apple-color-emoji.ttf') format('truetype');
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Alegreya SC', serif;
+  font-weight: 450;
+}
+.apple-emoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif !important;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: -0.1em;
+}
+.window {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.top-bar {
+  height: 45px;
+  min-height: 45px; /* Щоб не стискалася */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #333;
+  color: #17133d;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  padding-left: 15px;
+  font-size: 24px;
+}
+
+.window-buttons {
+  display: flex;
+  height: 100%;
+}
+
+.window-buttons button {
+  width: 46px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: #17133d;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.window-buttons button:hover {
+  background: #c0d6f9;
+}
+
+.content {
+  flex: 1; 
+  width: 100%;
+  position: relative;
+}
+
+.welcome-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #dce8ff;
+}
+
+.hearts {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 140px; 
+  height: auto; 
+  letter-spacing: 2px;
+  z-index: 5;
+}
+
+.birthday-title {
+  position: absolute;
+  top: 10px;   
+  right: 10px;  
+  width: 260px; 
+  height: auto; 
+  transform: rotate(5deg); 
+  z-index: 5;     
+  pointer-events: none; 
+  user-select: none;
+}
+
+.welcome-card {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  width: 70%;
+  padding: 20px;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  background: white;
+  color: #17133d;
+  font-size: 30px;
+  line-height: 1.35;
+  text-align: left;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 15%);
+}
+
+.birthday-duck {
+  position: absolute;
+  bottom: 55px;
+  left: 25px;
+  font-size: 100px;
+  width: 250px; 
+  height: auto;
+}
+
+.cake {
+  position: absolute;
+  bottom: 15px;
+  left: 24%;
+  font-size: 80px;
+  width: 140px; 
+  height: auto;
+}
+
+.cat {
+  position: absolute;
+  right: 25px;
+  bottom: 35px;
+  font-size: 400px;
+  width: 280px; 
+  height: auto;
+}
+
+.next-button {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  font-family: 'Alegreya SC', serif;
+  bottom: 160px;
+}
+.cakevec{
+  top: auto;
+}
+.next-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #dce8ff;
+  color: #17133d;
+}
+.page-two {
+  width: 100%;
+  height: 100%;
+}
+
+.red-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  background-image: url('/src/photostwo/purplesky.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: moveSideways 7s ease-in-out infinite;
+}
+
+@keyframes moveSideways {
+  0%, 100% {
+    background-position: calc(50% - 95px) center;
+  }
+
+  50% {
+    background-position: calc(50% + 25px) center;
+  }
+}
+
+.red-text {
+  position: absolute;
+  top: 35px;
+  left: 8%;
+  right: 6%;
+  width: 82%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: white;
+  color: #ffeeb7;
+  font-size: 30px;
+  line-height: 1.05;
+  text-align: left;
+  background-color: rgba(94, 53, 107, 0.75);
+  border: 2px solid #e8c96d;
+  
+
+  box-shadow:
+    0 0 5px rgba(255, 215, 100, 0.7),
+    0 0 12px rgba(255, 196, 70, 0.4),
+    inset 0 0 8px rgba(255, 215, 100, 0.12);
+
+  animation: goldenGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes goldenGlow {
+  from {
+    border-color: #b99a50;
+    box-shadow:
+      0 0 4px rgba(255, 215, 100, 0.35),
+      0 0 8px rgba(255, 196, 70, 0.2),
+      inset 0 0 5px rgba(255, 215, 100, 0.08);
+  }
+
+  to {
+    border-color: #ffe9a3;
+    box-shadow:
+      0 0 7px rgba(255, 225, 130, 0.85),
+      0 0 18px rgba(255, 196, 70, 0.55),
+      inset 0 0 9px rgba(255, 215, 100, 0.15);
+  }
+}
+.p-text-two{
+  color: #ffffff;
+}
+.red-text p {
+  margin: 0;
+}
+.continue-button-two{
+  position: absolute;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  font-family: 'Alegreya SC', serif;
+  font-weight: 500;
+  top: 490px;
+}
+.continue-button-two:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+.stars {
+  position: absolute;
+  left: 40px;
+  bottom: 55px;
+  color: white;
+  width: 200px; 
+  height: auto;
+  line-height: 0.8;
+}
+
+.balloons {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  width: 250px; 
+  height: auto;
+  line-height: 0.8;
+  filter: drop-shadow(0px 15px 15px rgba(0, 0, 0, 0.6));
+}
+
+.red-card .continue-button {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+
+  margin: 0;
+  transform: translateX(-50%);
+}
+
+.red-card .continue-button {
+    position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}
+.red-card .continue-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+.page-three {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-image: url('/src/photostwo/redsky.png');
+background-size: cover;     /* Зменшує/віддаляє картинку, щоб вона вся помістилась */
+  background-position: center;  /* Центрує її */
+  background-repeat: no-repeat;
+  color: #17133d;
+  padding: 25px;
+}
+
+.page-three .system-message {
+  margin: 5;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+  font-family: monospace;
+  font-family: 'Press Start 2P', monospace;
+
+}
+
+
+.page-three .notme30{
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  margin-right: 5px;
+  transform: translateX(300px);
+  text-align: right;
+}
+.page-three .age-message {
+box-sizing: border-box;
+  width: 85%;
+  max-width: 750px;
+margin: 60px auto 0;
+  padding: 20px;
+  
+  font-family: 'Alegreya SC', serif;
+  font-size: 43px;
+  color: #4f0000;
+  text-align: left; 
+  line-height: 0.7;
+  background-color: rgba(255, 255, 255, 0.40);
+  border: 2px solid #d1b3b3;
+  border-radius: 16px;
+}
+
+.page-three .age-message p {
+  margin: 5px 0;
+}
+
+.page-three .age {
+  color: #000000;
+  font-size: 38px;
+}
+.chest-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chest-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+.chest-continue {
+  background-color: #ffffff;
+  color: #4f0000;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 28px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+  margin-top: 10px;
+  font-family: 'Alegreya SC', serif;
+}
+.chest-continue:hover {
+  transform: translateX(0%) scale(1.1);
+}
+.sub-text {
+  font-size: 30px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000;
+  margin-bottom: 20px;
+  font-weight: 300;
+  margin-top: 20px;
+}
+.page-three .continue-button {
+  display: block;
+  margin: 20px auto;
+}
+
+.page-three .back-pain {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: 15px;
+  font-size: 18px;
+  text-align: left;
+}
+.chest-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Відстань між кругами */
+  margin: 30px 0;
+}
+.reward-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: rgba(25, 15, 40, 0.4);
+  animation: reward-fade-in 0.2s ease;
+}
+
+.reward-modal {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  padding: 28px 22px 22px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #4f0000;
+  background: #f5e2e2;
+  border: 2px solid #820a0a;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(50, 20, 60, 0.25);
+   box-shadow:
+    0 0 5px rgba(255, 100, 100, 0.7),
+    0 0 12px rgba(198, 58, 2, 0.4),
+    inset 0 0 8px rgba(255, 215, 100, 0.12);
+
+  animation: redGlow 3s ease-in-out infinite alternate;
+}
+  @keyframes redGlow {
+  0% {
+    box-shadow:
+      0 0 6px rgba(255, 0, 0, 0.6),
+      0 0 15px rgba(220, 38, 38, 0.4),
+      inset 0 0 6px rgba(255, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow:
+      0 0 14px rgba(255, 0, 0, 0.95),
+      0 0 30px rgba(239, 68, 68, 0.7),
+      inset 0 0 14px rgba(255, 0, 0, 0.35);
+  } 
+
+}
+
+.reward-modal h2 {
+  margin: 0 20px 12px;
+  font-size: 22px;
+  font-family: 'Alegreya SC', serif;
+}
+
+.reward-modal p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+  font-size: 20px;
+  font-family: 'Alegreya SC', serif;
+}
+
+.reward-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  color: #4f0000;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.reward-ok {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #4f0000;
+  color: white;
+  font-family: 'Alegreya SC', serif;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.reward-ok:hover {
+  background: #4f0000;
+}
+
+@keyframes reward-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes reward-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Сама кнопка-круг для скриньки */
+.chest-option {
+  position: relative; /* Потрібно для позиціювання знака питання */
+  width: 160px;
+  height: 160px;
+  background-color: #ffffff; /* Білий круглий фон */
+  border: 3px solid #d1b3b3; /* Ніжна рожево-коричнева рамка під загальний стиль */
+  border-radius: 50% !important; /* Робить кнопку ідеальним колом */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ефект при наведенні (легке збільшення) */
+.chest-option:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Коли скринька вже обрана */
+.chest-option.chest-selected {
+  border-color: #4f0000;
+  transform: scale(1.05);
+}
+
+/* Стиль для іконки скриньки всередині */
+.chest-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 75%;
+}
+
+.chest-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Якщо піксельна графіка розмивається, можна додати це: */
+  image-rendering: pixelated; 
+}
+
+/* 
+  Опціонально: якщо ти захочеш додати знак питання (?) у вигляді елемента чи картинки, 
+  він позиціюватиметься так:
+*/
+.chest-option::after {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-family: 'Alegreya SC', serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: #4f0000;
+  
+}
+
+
+.chest-reward {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #d1b3b3;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  color: #4f0000;
+}
+.continue-button {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  font-family: 'Alegreya SC', serif;
+  font-weight: 500;
+}
+
+.continue-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+/* ========================================
+   PAGE FOUR — ДЕНЬ НАРОДЖЕННЯ 🎂
+======================================== */
+
+.page-four {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #ffe9ba;
+  color: #17133d;
+  text-align: center;
+  padding: 20px;
+  isolation: isolate;
+}
+
+.page-four *,
+.page-four *::before,
+.page-four *::after {
+  box-sizing: border-box;
+}
+
+/* Заголовок */
+.page-four h1 {
+  position: relative;
+  z-index: 4;
+  left: -130px;
+  margin: 10px 0 12px;
+  padding-top: 25px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 30px;
+  font-weight: 700;
+  color: #482c00;
+}
+
+/* Декоративні картинки */
+.ohno-four {
+  position: absolute;
+  z-index: 5;
+  top: -26px;
+  right: 150px;
+  width: 200px;
+  height: auto;
+  pointer-events: none;
+}
+
+  .hearts-emoji {
+  position: absolute;
+  right: 20px;  
+  top: 55%;      
+  transform: translateY(-50%); 
+  width: 150px;
+}
+
+.cake-emoji {
+  position: absolute;
+  z-index: 5;
+  top: 37px;
+  left: 25px;
+  width: 45px;
+  height: auto;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+.cake-cat {
+  position: absolute;
+  z-index: 6;
+  left: 20px;
+  bottom: 5px;
+  width: 230px;
+  height: auto;
+  pointer-events: none;
+}
+
+.cake-monkeys {
+  position: absolute;
+  z-index: 6;
+  right: 2px;
+  bottom: -95px; 
+  width: 200px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Опис завдання */
+.birthday-description {
+  position: relative;
+  z-index: 4;
+  width: 75%;
+  padding: 12px 20px;
+  border-radius: 18px;
+  background: #fff;
+  color: #482c00;
+  font-size: 25px;
+  line-height: 1.3;
+  text-align: left;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
+}
+
+.birthday-description p {
+  margin: 0;
+}
+.page-four .mic-control {
+  position: absolute;
+  right: 2%;
+  top: -525%;
+  width: 230px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.page-four .mic-button {
+  position: relative;
+  left: 40px;
+  bottom: auto;
+  transform: none;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  top: -420px;
+  
+}
+
+.page-four .mic-button:hover {
+  transform: scale(1.05);
+}
+
+.page-four .mic-status {
+  position: relative;
+  z-index: 15;
+}
+/* Мікрофон */
+.mic-button {
+  position: absolute;
+  z-index: 7;
+  left: 90%;
+  bottom: 370px;
+  transform: translateX(-50%);
+  padding: 14px 18px;
+  border: none;
+  border-radius: 30px;
+  background: #fff;
+  color: #17133d;
+  font-family: 'Alegreya SC', serif;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}
+.page-four .mic-control .mic-button {
+  position: absolute;
+  left: calc(50% + 25px);
+  top: 20%;
+  bottom: auto;
+  transform: translateX(-50%);
+  width: 230px;
+  z-index: 20;
+}
+.mic-button:hover {
+  transform: translateX(-55%) scale(1.05);
+}
+
+.mic-status {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+
+  font-family: 'Alegreya SC', serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.status-blowing {
+  background: #ffe0e8;
+  animation: status-pulse 0.3s ease-in-out infinite alternate;
+}
+
+.mic-error {
+  position: relative;
+  z-index: 8;
+  color: #a32643;
+  font-size: 14px;
+}
+
+.blow-header-container {
+  position: relative;
+  z-index: 4;
+}
+
+.candle-counter {
+  margin-top: 50px;
+  font-size: 35px;
+  margin-left: 750px;
+  color: #482c00;
+  font-weight: 400;
+}
+
+/* ========================================
+   ТОРТ
+======================================== */
+
+.page-four .cake-container {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 48%;
+  width: min(400px, 78vw);
+  height: min(340px, 48vh);
+  min-height: 280px;
+  transform: translateX(-50%);
+  overflow: visible;
+  animation: cake-glow 3s ease-in-out infinite alternate;
+}
+
+.page-four .cake-base {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 8%;
+  width: 100%;
+  height: 90%;
+  object-fit: contain;
+  transform-origin: center bottom;
+  
+}
+
+/* Підкладка */
+.page-four .ellipse {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 10%;
+  width: 100%;
+  height: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* Зірочки */
+.page-four .starpink,
+.page-four .starunder {
+  position: absolute;
+  z-index: 3;
+  width: 7%;
+  height: auto;
+  pointer-events: none;
+}
+
+.page-four .starpink:nth-of-type(3) {
+  left: 20%;
+  top: 40%;
+}
+
+.page-four .starunder:nth-of-type(4) {
+  left: 30%;
+  top: 43%;
+}
+
+.page-four .starpink:nth-of-type(5) {
+  left: 40%;
+  top: 38%;
+}
+
+.page-four .starunder:nth-of-type(6) {
+  left: 50%;
+  top: 43%;
+}
+
+.page-four .starpink:nth-of-type(7) {
+  left: 60%;
+  top: 38%;
+}
+
+.page-four .starunder:nth-of-type(8) {
+  left: 70%;
+  top: 43%;
+}
+
+.page-four .starpink:nth-of-type(9) {
+  left: 80%;
+  top: 40%;
+}
+
+.page-four .starunder:nth-of-type(10) {
+  left: 35%;
+  top: 50%;
+}
+
+.page-four .starpink:nth-of-type(11) {
+  left: 55%;
+  top: 50%;
+}
+
+.page-four .starunder:nth-of-type(12) {
+  left: 65%;
+  top: 49%;
+}
+
+/* ========================================
+   30 СВІЧОК
+======================================== */
+
+.page-four .candles-wrapper {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 18%;
+  width: 100%;
+  height: 42%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+}
+
+.page-four .candle-img-btn {
+position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 25px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  overflow: visible;
+
+  /* Центрування не змінюється при наведенні */
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  transition: filter 0.2s ease;
+}
+
+.page-four .candle-img-btn:focus-visible {
+  outline: 2px dashed #a84c76;
+  outline-offset: 2px;
+}
+
+.page-four .candle-body {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 3px 3px 2px 2px;
+  background: repeating-linear-gradient(
+    135deg,
+    #ff9fc9 0 4px,
+    #fff0f6 4px 8px
+  );
+  box-shadow: inset -2px 0 2px rgb(150 45 100 / 15%);
+}
+
+/* Ґніт */
+.page-four .candle-wick {
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  width: 2px;
+  height: 5px;
+  background: #45303b;
+  transform: translateX(-50%);
+}
+
+/* Полум'я */
+.page-four .candle-flame {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: -22px;
+  width: 12px;
+  height: 18px;
+  border-radius: 50% 50% 48% 48%;
+  background: radial-gradient(
+    ellipse at 50% 68%,
+    #fff9bd 0 20%,
+    #ffd34e 43%,
+    #ff8c42 72%,
+    #ff5a36 100%
+  );
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  box-shadow:
+    0 0 5px rgb(255 190 70 / 80%),
+    0 0 12px rgb(255 130 70 / 35%);
+  animation: flame-flicker 0.55s ease-in-out infinite alternate;
+}
+
+.page-four .candle-flame::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 5px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff9d8;
+  transform: translateX(-50%);
+}
+
+/* Задута свічка */
+.page-four .candle-img-btn.blown .candle-body {
+  opacity: 0.65;
+  background: #b98b9e;
+  box-shadow: none;
+}
+
+.page-four .candle-img-btn.blown .candle-flame {
+  display: none;
+}
+
+.page-four .candle-img-btn.blowing-active:not(.blown) .candle-flame {
+  animation: flame-blow 0.18s ease-in-out infinite alternate;
+}
+
+.page-four .candle-img-btn:not(:disabled):hover {
+  transform: translateY(-3px);
+}
+
+.page-four .blow-title {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  bottom: 350px;
+  width: 100%;
+  transform: translateX(-50%);
+  margin: 0;
+  text-align: center;
+  color: #482c00;
+  font-size: 35px;
+  font-weight: 430;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+.page-four .candles-wrapper .candle-img-btn {
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 25px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  overflow: visible;
+
+  /* Центрування не змінюється при наведенні */
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  transition: filter 0.2s ease;
+}
+.page-four .candles-wrapper .candle-img-btn:not(:disabled):hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  filter: brightness(1.08);
+}
+.page-four .candles-wrapper .candle-img-btn:disabled {
+  cursor: default;
+}
+
+.page-four .candles-wrapper .blow-title {
+  display: none;
+}
+/* ========================================
+   ФІНАЛЬНЕ ВІКНО
+======================================== */
+
+.modal-overlay {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(0 0 0 / 25%);
+}
+
+.candle-modal {
+  width: 230px;
+  padding: 22px;
+  border-radius: 22px;
+  background: #dce8ff;
+  box-shadow: 0 8px 25px rgb(0 0 0 / 30%);
+}
+
+.candle-modal h2 {
+  margin: 0 0 20px;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.candle-modal button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #fff;
+  color: #17133d;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 15%);
+}
+
+.candle-modal button:hover {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   АНІМАЦІЇ
+======================================== */
+
+@keyframes flame-flicker {
+  from {
+    transform: translateX(-50%) rotate(-4deg) scale(0.94, 1);
+  }
+  to {
+    transform: translateX(-50%) rotate(4deg) scale(1.06, 1.08);
+  }
+}
+
+@keyframes flame-blow {
+  from {
+    transform: translateX(-50%) rotate(25deg) scale(0.9, 0.85);
+  }
+  to {
+    transform: translateX(-25%) rotate(55deg) scale(0.7, 0.65);
+  }
+}
+
+@keyframes cake-float {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes cake-glow {
+  from {
+    filter: drop-shadow(0 0 5px rgb(255 145 190 / 12%));
+  }
+  to {
+    filter: drop-shadow(0 0 16px rgb(255 145 190 / 32%));
+  }
+}
+
+@keyframes status-pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+/* Адаптація */
+@media (max-width: 700px) {
+  .page-four h1 {
+    left: 0;
+    font-size: clamp(16px, 4vw, 25px);
+  }
+
+  .birthday-description {
+    width: 100%;
+    font-size: clamp(14px, 2.5vw, 20px);
+  }
+
+  .page-four .cake-container {
+    top: 54%;
+    width: 94vw;
+    height: 38vh;
+    min-height: 220px;
+  }
+
+  .page-four .candle-img-btn {
+    transform: scale(0.85);
+  }
+
+  .ohno-four {
+    right: 5px;
+    width: 110px;
+  }
+
+  .cake-cat {
+    width: 130px;
+  }
+
+  .cake-monkeys {
+    width: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-four .cake-base,
+  .page-four .cake-container,
+  .page-four .candle-flame,
+  .mic-status {
+    animation: none !important;
+  }
+}
+.page-five {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  background: #ffcae4;
+  color: #17133d;
+  text-align: center;
+  padding: 25px;
+}
+
+.memory-text {
+  position: absolute;
+  top: px;
+  left: 30px;
+  right: 200px;
+  font-size: 35px;
+  line-height: 1.15;
+  text-align: left;
+}
+.cutie {
+  position: absolute;
+  bottom: 1px; 
+  left: 5px;  
+  width: 300px; 
+  height: auto;
+  pointer-events: none; 
+  z-index: 5;  
+  top: 410px;
+}
+.homic {
+  position: absolute;
+  right: 15px;     
+  width: 250px;    
+  height: auto;
+  pointer-events: none; 
+  z-index: 5;       
+  top: -113px;
+}
+.continue-button-six{
+  position: absolute;
+  left: 50%;
+  bottom: 85px; 
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  z-index: 10;
+  font-family: 'Alegreya SC', serif;
+}
+.continue-button-six:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+.photo-strip-container {
+  position: absolute;
+  top: 155px;
+  left: 20px;
+  right: 20px;
+  height: 52%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth; 
+  -webkit-overflow-scrolling: touch;
+  cursor: grab; 
+}
+
+.photo-strip-container::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-strip {
+  display: flex;
+  gap: 15px; 
+  height: 100%;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.memory-photo-wrapper {
+  flex: 0 0 auto; 
+  height: 85%;    
+  width: auto;    
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 18%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  transform: translateZ(0);
+}
+
+.memory-photo-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 25%);
+}
+
+
+.memory-photo-grid {
+  height: 100%;   
+  width: auto;    
+  object-fit: contain; 
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.photo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; 
+  cursor: zoom-out; 
+}
+
+.photo-modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default; 
+}
+
+.photo-modal-content img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-modal-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 50px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.close-modal-button:hover {
+  opacity: 1;
+}
+
+.page-five .continue-button {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #17133d;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+  z-index: 10;
+}
+
+.page-five .continue-button:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.memory-bottom-text {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  max-width: 280px;
+  padding: 12px 18px;
+  border-radius: 25px;
+  background: white;
+  font-size: 19px;
+  text-align: center;
+  z-index: 10;
+}
+.next-page-button {
+  position: absolute;
+  right: 30px;
+  bottom: 80px;
+
+  padding: 12px 25px;
+
+  border: none;
+  border-radius: 25px;
+
+  background: white;
+  color: #17133d;
+
+  font-size: 17px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}
+/* YANDERE SIMULATOR */
+
+.page-six {
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+box-sizing: border-box;
+background: #090610;
+color: white;
+font-family: Georgia, serif;
+}
+
+.yandere-heading {
+position: absolute;
+top: 25px;
+left: 15%;
+width: 70%;
+padding: 10px;
+box-sizing: border-box;
+background: #dedede;
+color: #17133d;
+text-align: center;
+
+}
+
+
+
+.yandere-heading h1 {
+margin: 8px 0 0;
+font-size: 38px;
+font-family: 'Alegreya SC', serif;
+line-height: 1.1;
+}
+
+.yandere-game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.me-button,
+.pizza-button {
+  position: absolute;
+  min-width: 64px;
+  min-height: 60px;
+  border: none;
+  background: #dedede;
+  color: #17133d;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  cursor: pointer;
+  transition: left 0.12s ease, top 0.12s ease, right 0.12s ease, bottom 0.12s ease;
+  z-index: 20;
+}
+
+.me-button {
+  left: 18%;        
+  bottom: 22%;      
+  background: #f98fc7;
+  width: 80px; 
+  height: 80px;
+}
+
+.pizza-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 50px;
+  z-index: 2;
+  width: 80px; 
+  height: 80px;
+  bottom: 22%;     
+  right: 18%;      
+}
+
+.attempt-counter {
+position: absolute;
+left: 15px;
+bottom: 5px;
+margin: 0;
+color: white;
+font-size: 14px;
+}
+
+.yandere-overlay {
+position: absolute;
+inset: 0;
+z-index: 5;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+box-sizing: border-box;
+background: rgb(0 0 0 / 55%);
+}
+
+ .girl {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px; 
+  height: auto;
+  z-index: 2;
+}
+.dangersix {
+  position: absolute;
+  top: 130px;
+  left: 450px;
+  width: 80px;
+  height: auto;
+}
+.shy {
+  position: absolute;
+  top: 140px;
+  left: 45px;
+  width: 110px;
+  height: auto;
+}
+.bloodsix {
+  position: absolute;
+  top: 50px;
+  right: 65px;
+  width: 200px;
+  height: auto;
+}
+.heartssix {
+  position: absolute;
+  top: 250px;
+  right: 20px;
+  width: 260px;
+  height: auto;
+}
+.favsix{
+ position: absolute;
+  bottom: 350px;       
+  left: 50%;          
+  transform: translateX(-50%); 
+  text-align: center;
+  width: 100%;       
+  font-weight: 100;
+  z-index: 1;
+  font-size: 50px;
+}
+
+.pink-ending,
+.red-ending {
+width: 85%;
+max-width: 350px;
+padding: 25px;
+box-sizing: border-box;
+border-radius: 10px;
+color: white;
+text-align: center;
+}
+
+.pink-ending {
+background: #ee97c6;
+}
+
+.red-ending {
+background: #ff0808;
+
+}
+.lovebears{
+  position: absolute;
+  left: 325px;
+  width: 70px;
+  top: 310px;
+}
+.mememe {
+  position: absolute; 
+  right: 350px;      
+  bottom: 10px;       
+  margin: 0;         
+  top: 350px;
+}
+.pink-ending h2{
+  color: #ffffff;
+}
+.pink-ending h2,
+.red-ending h2 {
+font-size: 22px;
+font-weight: normal;
+}
+
+.pink-ending p,
+.red-ending p {
+font-size: 18px;
+}
+
+.pink-ending button,
+.red-ending button {
+padding: 10px 13px;
+border: none;
+border-radius: 25px;
+background: white;
+color: #17133d;
+font-family: Georgia, serif;
+font-size: 14px;
+cursor: pointer;
+box-shadow: 0 3px 6px rgb(0 0 0 / 25%);
+margin-top: 25px;
+}
+
+.pink-ending button,
+.red-ending button {
+transform: scale(1.04);
+}
+/* PAGE 7 — SYSTEM UPDATE */
+
+.page-seven {
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+box-sizing: border-box;
+padding: 15px;
+background: #8c4ba5;
+color: white;
+font-family: Georgia, serif;
+}
+
+.update-title {
+width: 72%;
+margin: 0 auto 10px;
+padding: 8px;
+border-radius: 12px;
+background: white;
+color: #17133d;
+text-align: center;
+font-family: 'Press Start 2P', monospace;
+font-size: 32px;
+line-height: 0.9;
+}
+.mikimyboy{
+    position: absolute;
+  right: 15px;
+  bottom: 1px;
+  width: 350px; 
+  height: auto;
+  line-height: 0.8;
+}
+.foxsevenpage{
+    position: absolute;
+  right: 15px;     
+  width: 180px;    
+  height: auto;
+  pointer-events: none; 
+  z-index: 5;       
+  top: 85px;
+}
+.update-version {
+margin: 10px 0 15px;
+text-align: center;
+font-family: 'Press Start 2P', monospace;
+font-size: 35px;
+color: #ffffff;
+}
+
+.update-success {
+margin: 10px 0;
+text-decoration-thickness: 3px;
+font-size: 28px;
+text-align: left;
+padding-top: 10px;  
+padding-left: 15px;
+}
+
+.update-info {
+font-size: 28px;
+line-height: 1.25;
+text-align: left;
+padding-top: 10px;  
+padding-left: 15px;
+}
+
+.update-info p {
+margin: 8px 0;
+}
+
+.page-seven .continue-button {
+bottom: 350px;
+font-size: 35px;
+transform: translateX(-70px);
+font-weight: 500;
+}
+.page-seven .continue-button:hover {
+  transform: translateX(-20%) scale(1.05);
+}
+/* PAGE 8 — PERSONAL LETTER */
+
+.page-eight {
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+box-sizing: border-box;
+padding: 20px;
+background: #210b3b;
+color: white;
+font-family: Georgia, serif;
+}
+
+.letter-heading {
+position: absolute;
+top: 25px;
+left: 5%;
+font-size: 37px;
+line-height: 1.2;
+}
+
+.letter-sticker {
+position: absolute;
+top: 1px;
+right: 1%;
+width: 30%;
+max-height: 350px;
+object-fit: contain;
+}
+
+.letter-card {
+position: absolute;
+top: 27%;
+left: 5%;
+width: 82%;
+max-height: 48%;
+overflow: auto;
+box-sizing: border-box;
+padding: 14px;
+border-radius: 18px;
+background: white;
+color: #17133d;
+font-size: 28px;
+line-height: 1.15;
+text-align: left;
+}
+
+.letter-photo {
+position: absolute;
+right: 10%;
+bottom: 10%;
+width: 18%;
+max-height: 220px;
+object-fit: contain;
+}
+
+.letter-final-button {
+position: absolute;
+left: 30%;
+bottom: 40px;
+transform: translateX(-50%);
+padding: 12px 20px;
+border: none;
+border-radius: 25px;
+background: white;
+color: #17133d;
+font-family: Georgia, serif;
+font-size: 25px;
+white-space: nowrap;
+cursor: pointer;
+box-shadow: 0 3px 8px rgb(0 0 0 / 25%);
+margin-bottom: 25px;
+}
+
+.letter-final-button:hover {
+transform: translateX(-50%) scale(1.04);
+}
+
+.letter-signature {
+position: absolute;
+right: 15px;
+bottom: 5px;
+margin: 0;
+font-size: 20px;
+}
+/* ===== PAGE 9: FINAL COSMIC SCENE ===== */
+
+.page-nine {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #020104;
+  color: #fff;
+}
+
+/* ===== COSMIC TUNNEL ===== */
+
+.tunnel-mode {
+  background: #000;
+}
+
+.final-tunnel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  perspective: 700px;
+  background:
+    radial-gradient(
+      ellipse at center,
+      #360013 0%,
+      #170009 25%,
+      #050003 58%,
+      #000 100%
+    );
+}
+
+/* Світні кільця, які пролітають повз камеру */
+.final-tunnel::before,
+.final-tunnel::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(48vw, 440px);
+  aspect-ratio: 1;
+  border: 2px solid rgba(255, 49, 119, 0.9);
+  border-radius: 50%;
+  box-shadow:
+    0 0 12px #ff174f,
+    inset 0 0 14px rgba(255, 23, 79, 0.65),
+    0 0 35px rgba(255, 23, 79, 0.5);
+  transform: translate(-50%, -50%) scale(0.05);
+  animation: tunnel-ring-flight 1.8s linear infinite;
+}
+
+.final-tunnel::after {
+  border-color: rgba(255, 185, 216, 0.95);
+  animation-delay: -0.9s;
+}
+
+/* Потік частинок, що летять із глибини назустріч */
+.tunnel-particles {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    radial-gradient(circle, #fff 0 1px, transparent 2px),
+    radial-gradient(circle, #ff174f 0 1.5px, transparent 2.5px),
+    radial-gradient(circle, #ff8eb8 0 1px, transparent 2px);
+  background-size: 43px 47px, 67px 59px, 89px 73px;
+  background-position: 0 0, 17px 23px, 31px 11px;
+  mask-image: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    #000 24%,
+    #000 100%
+  );
+  animation: tunnel-particle-flight 1.1s linear infinite;
+}
+
+/* Додаткові концентричні кільця в перспективі */
+.tunnel-particles::before,
+.tunnel-particles::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25%;
+  height: 25%;
+  border: 2px solid rgba(255, 70, 145, 0.8);
+  border-radius: 50%;
+  box-shadow:
+    0 0 16px #ff174f,
+    inset 0 0 16px rgba(255, 23, 79, 0.5);
+  transform: translate(-50%, -50%);
+  animation: tunnel-inner-flight 1.8s linear infinite;
+}
+
+.tunnel-particles::after {
+  width: 40%;
+  height: 40%;
+  border-color: rgba(255, 180, 215, 0.65);
+  animation-delay: -0.9s;
+}
+
+.tunnel-center {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff4d83;
+  font-size: 54px;
+  text-shadow:
+    0 0 12px #ff174f,
+    0 0 30px #ff174f,
+    0 0 60px #ff174f;
+  animation: tunnel-heart 1s ease-in-out infinite;
+}
+
+@keyframes tunnel-ring-flight {
+  0% {
+    transform: translate(-50%, -50%) scale(0.05);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3.8);
+    opacity: 0;
+  }
+}
+
+@keyframes tunnel-inner-flight {
+  0% {
+    transform: translate(-50%, -50%) scale(0.15);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes tunnel-particle-flight {
+  from {
+    transform: scale(0.65) rotate(0deg);
+  }
+  to {
+    transform: scale(1.8) rotate(5deg);
+  }
+}
+
+@keyframes tunnel-heart {
+  0%, 100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+}
+
+.final-galaxy {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #020104;
+}
+
+.galaxy-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.galaxy-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.2) 72%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+.galaxy-title {
+  position: absolute;
+  z-index: 2;
+  top: 3%;
+  left: 50%;
+  width: 90%;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #ffd5e2;
+  text-align: center;
+  font-size: clamp(13px, 2vw, 22px);
+  font-weight: 500;
+  text-shadow: 0 0 12px #ff1717, 0 0 24px #b9003a;
+  pointer-events: none;
+}
+
+.galaxy-portals {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+}
+
+.galaxy-portal {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  max-width: 30%;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 95, 145, 0.22);
+  border-radius: 20px;
+  background: rgba(20, 0, 10, 0.28);
+  color: #ffb5cd;
+  font-family: inherit;
+  font-size: clamp(9px, 1.2vw, 13px);
+  letter-spacing: 0.4px;
+  text-shadow: 0 0 8px #ff0000;
+  white-space: normal;
+  cursor: pointer;
+  pointer-events: auto;
+  animation: portal-float 3s ease-in-out infinite;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.galaxy-portal:hover {
+  color: #fff;
+  background: rgba(150, 0, 45, 0.65);
+  box-shadow: 0 0 18px rgba(255, 30, 90, 0.6);
+}
+
+.bonus-portal {
+  max-width: 70%;
+  padding: 8px 15px;
+  border-color: rgba(255, 75, 75, 0.7);
+  background: rgba(100, 0, 25, 0.65);
+  color: #fff;
+  font-size: clamp(10px, 1.4vw, 15px);
+}
+
+@keyframes portal-float {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -5px; }
+}
+
+@media (max-width: 600px) {
+  .galaxy-title {
+    top: 2%;
+    line-height: 1.4;
+  }
+
+  .galaxy-portal {
+    padding: 4px 5px;
+    letter-spacing: 0;
+  }
+}
+
+
+/* ===== PAGE 10: FINAL GAME ===== */
+
+.pixel-player {
+  position: absolute;
+  z-index: 5;
+  width: 70px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.pixel-player img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  user-select: none;
+}
+.supply-item img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}

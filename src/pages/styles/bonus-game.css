@@ -1,0 +1,355 @@
+.bonus-game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #e9f3e9;
+  background: #101510;
+  font-family: "Courier New", monospace;
+}
+
+.mission-intro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(67, 78, 52, 0.25), transparent 65%),
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(0, 0, 0, 0.12) 3px 4px),
+    #101510;
+}
+
+.mission-tag {
+  color: #b6d17d;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.mission-intro h1 {
+  margin: 12px 0;
+  color: #d9e8b2;
+  font-size: clamp(22px, 4vw, 38px);
+  text-shadow: 3px 3px #3d4c2b;
+}
+
+.dispatcher {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.intro-text {
+  line-height: 1.9;
+  font-size: clamp(12px, 1.6vw, 16px);
+}
+
+.game-button {
+  margin-top: 20px;
+  padding: 12px 18px;
+  border: 2px solid #b6d17d;
+  background: #293421;
+  color: #e9f3e9;
+  font: bold 12px "Courier New", monospace;
+  cursor: pointer;
+}
+
+.game-button:hover {
+  background: #435632;
+}
+
+.mission-map {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-sizing: border-box;
+  background: #151b14;
+}
+
+.mission-hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #d9e8b2;
+  font-size: 12px;
+}
+
+.game-terrain {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 3px solid #414a38;
+  background-color: #292e25;
+}
+
+.pixel-player,
+.supply-item,
+.routine-enemy {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.pixel-player {
+  position: absolute;
+  z-index: 2;
+  width: 80px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  will-change: left, top;
+}
+
+.pixel-player img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.supply-item {
+  z-index: 3;
+  padding: 5px;
+  border: 1px dashed #c2d69b;
+  background: #1d271b;
+  font-size: 25px;
+  cursor: pointer;
+  animation: supply-pulse 1.2s ease-in-out infinite alternate;
+}
+
+.routine-enemy {
+  font-size: 24px;
+  animation: enemy-bob 0.7s ease-in-out infinite alternate;
+}
+
+.enemy-one {
+  left: 45%;
+  top: 53%;
+}
+
+.enemy-two {
+  left: 70%;
+  top: 77%;
+  animation-delay: -0.3s;
+}
+
+.game-hint {
+  margin: 10px 0 0;
+  color: #b6c2a7;
+  font-size: 11px;
+  text-align: center;
+}
+
+.mission-notice {
+  position: absolute;
+  z-index: 5;
+  inset: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border: 2px solid #b6d17d;
+  background: rgba(10, 16, 10, 0.96);
+  text-align: center;
+  font-size: 13px;
+}
+
+.scan-combination {
+  margin: 24px 0;
+  color: #c7e58c;
+  font-size: 36px;
+  letter-spacing: 10px;
+}
+
+.scan-progress {
+  min-height: 20px;
+  color: #ff7979;
+  letter-spacing: 5px;
+}
+
+.party-ending {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 194, 75, 0.28), transparent 55%),
+    #242018;
+  animation: party-light 2s ease-in-out infinite alternate;
+}
+
+.party-ending h1 {
+  color: #ffe39c;
+  text-shadow: 3px 3px #b63838;
+}
+
+.party-decor {
+  margin-top: 20px;
+  font-size: clamp(25px, 5vw, 48px);
+}
+
+@keyframes supply-pulse {
+  from { filter: brightness(0.8); }
+  to { filter: brightness(1.5); }
+}
+
+@keyframes enemy-bob {
+  from { margin-top: -3px; }
+  to { margin-top: 4px; }
+}
+
+@keyframes party-light {
+  from { filter: saturate(0.8); }
+  to { filter: saturate(1.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .supply-item,
+  .routine-enemy,
+  .party-ending {
+    animation: none;
+  }
+}
+.interaction-prompt {
+  position: absolute;
+  z-index: 6;
+  transform: translate(-50%, -50%);
+  padding: 7px 10px;
+  border: 1px solid #b6d17d;
+  background: rgba(8, 12, 8, 0.92);
+  color: #e9f3e9;
+  font: 11px "Courier New", monospace;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.interaction-prompt kbd {
+  margin-right: 5px;
+  padding: 2px 6px;
+  border: 1px solid #b6d17d;
+  color: #d9e8b2;
+  font: bold 12px "Courier New", monospace;
+}
+
+.resident-modal-overlay {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(2px);
+}
+
+.resident-modal {
+  width: min(520px, 100%);
+  max-height: 85%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 18px;
+  border: 2px solid #78865c;
+  background: #101610;
+  color: #dce5ce;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(142, 171, 93, 0.12);
+  font-family: "Courier New", monospace;
+}
+
+.resident-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #414a38;
+  color: #b6d17d;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.resident-close {
+  border: 0;
+  background: transparent;
+  color: #dce5ce;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.resident-modal h2 {
+  margin: 22px 0;
+  color: #d9e8b2;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.resident-document {
+  padding: 16px;
+  border: 1px solid #414a38;
+  background: #171d15;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.note-signature {
+  margin-top: 24px;
+  color: #b6d17d;
+  text-align: right;
+}
+
+.terminal-content {
+  padding: 16px;
+  border: 1px solid #394b32;
+  background: #080d08;
+  color: #b6d17d;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.terminal-status span {
+  color: #ff7979;
+  font-weight: bold;
+}
+
+.terminal-cursor {
+  margin-top: 22px;
+  animation: terminal-blink 1s steps(2, start) infinite;
+}
+
+.resident-continue {
+  display: block;
+  margin: 18px auto 0;
+}
+
+@keyframes terminal-blink {
+  to {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-cursor {
+    animation: none;
+  }
+}
+.ship-view {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  image-rendering: pixelated;
+}
